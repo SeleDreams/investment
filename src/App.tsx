@@ -1,8 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import { IonApp, IonButton, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonRouterOutlet, IonTitle, IonToolbar } from '@ionic/react';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -25,12 +22,18 @@ import './theme/variables.css';
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/home" component={Home} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
-      </IonRouterOutlet>
-    </IonReactRouter>
+    <IonHeader>
+      <IonToolbar color="primary">
+        <IonTitle>Investment</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+    <IonContent>
+      <IonItem>
+        <IonLabel>This is something</IonLabel>
+        <IonInput></IonInput>
+      </IonItem>
+      <IonButton>Click</IonButton>
+    </IonContent>
   </IonApp>
 );
 
